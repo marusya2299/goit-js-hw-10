@@ -89,5 +89,5 @@ button.addEventListener('click', () => {
         }
         updateTimer(addLeadingZero(convertMs(userSelectedDate - currentDate)));
       }, 1000);
-ь
+
 });
