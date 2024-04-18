@@ -1,0 +1,1 @@
+.body{font-size:16px}.form{display:flex;flex-direction:column;width:300px;gap:10px}.form label:first-child{display:flex;flex-direction:column}.form label:first-child input{min-height:35px;border-radius:5px;font-size:24px}.form button{border-radius:5px;min-height:30px}
