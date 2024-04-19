@@ -85,7 +85,6 @@ button.addEventListener('click', () => {
         if (userSelectedDate - currentDate <= 0) {
           updateTimer(addLeadingZero(convertMs(0)));
           input.disabled = false;
-          button.disabled = false;
             clearInterval(timerInterval);
             return;
         }
