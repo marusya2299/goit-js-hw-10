@@ -13,22 +13,21 @@ form.addEventListener('submit', function(event) {
     const stateInput = document.querySelector('input[name="state"]:checked');
     const state = stateInput.value;
 
-    switch (state)
-    {
-        case 'fulfilled':
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (state === 'fulfilled') {
+                resolve(`Fulfilled promise in ${delay}ms`);
+            } else {
+                reject(`Rejected promise in ${delay}ms`);
+            }
+        }, delay);
+    });
 
-            setTimeout(() => {
-                iziToast.success({ message: `Fulfilled promise in ${delay}ms` });
-            }, delay);
-            break;
-        
-        case 'rejected':
-
-            setTimeout(() => {
-                iziToast.error({ message: `Rejected promise in ${delay}ms`});
-            }, delay);
-            break;
-    }
+    promise.then(message => {
+        iziToast.success({ message: message });
+    }).catch(message => {
+        iziToast.error({ message: message });
+    });
 });
 
 
